@@ -35,8 +35,8 @@ class Watcher:
             return False
 
     def move_to_dead_zone(self):
-        print("Move Mouse Event: (%s,%s)" % (str(self.__screen_size[0]), str(self.__screen_size[1])))
-        pyautogui.moveTo(self.__screen_size[0], self.__screen_size[1])
+        print("Move Mouse Event: (%s,%s)" % (str(self.__screen_size[0]/2), str(self.__screen_size[1])))
+        pyautogui.moveTo(self.__screen_size[0]/2, self.__screen_size[1])
 
     def run(self):
         while True:
