@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pyautogui
+import keyboard
 import time
 
 
@@ -14,6 +15,7 @@ class Watcher:
         print("Screen Resolution: %sx%s" % (self.__screen_size[0], self.__screen_size[1]))
         self.__dead_zone_point = (960, 540)
         self.__dead_zone_radius = 50  # In pixels
+        keyboard.add_hotkey(hotkey="ctrl+m", callback=self.move_to_dead_zone)
 
     def in_area(self):
         pos = pyautogui.position()
@@ -32,12 +34,15 @@ class Watcher:
         else:
             return False
 
+    def move_to_dead_zone(self):
+        print("Move Mouse Event: (%s,%s)" % (str(self.__screen_size[0]), str(self.__screen_size[1])))
+        pyautogui.moveTo(self.__screen_size[0], self.__screen_size[1])
+
     def run(self):
         while True:
             if self.in_area():
                 if time.time() - self.__prev_timestamp > self.__timer:
-                    print("Move Mouse Event: (%s,%s)" % (str(self.__screen_size[0]),str(self.__screen_size[1])))
-                    pyautogui.moveTo(self.__screen_size[0], self.__screen_size[1])
+                    self.move_to_dead_zone()
             else:
                 self.__prev_timestamp = time.time()
             time.sleep(1)
