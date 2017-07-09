@@ -15,7 +15,7 @@ class Watcher:
         print("Screen Resolution: %sx%s" % (self.__screen_size[0], self.__screen_size[1]))
         self.__dead_zone_point = (960, 540)
         self.__dead_zone_radius = 50  # In pixels
-        keyboard.add_hotkey(hotkey="ctrl+m", callback=self.move_to_dead_zone)
+        self.__keyboard = keyboard.add_hotkey(hotkey="ctrl+m", callback=self.move_to_dead_zone)
 
     def in_area(self):
         pos = pyautogui.position()
