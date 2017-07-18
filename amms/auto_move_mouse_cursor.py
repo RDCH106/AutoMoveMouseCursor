@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from metadata import Metadata
 import pyautogui
 import keyboard
 import time
@@ -47,7 +48,25 @@ class Watcher:
                 self.__prev_timestamp = time.time()
             time.sleep(1)
 
+    def print_wellcome(self):
+        meta = Metadata()
+        print("    ___         __           __  ___                      ")
+        print("   /   | __  __/ /_____     /  |/  /___  __  ___   _____  ")
+        print("  / /| |/ / / / __/ __ \   / /|_/ / __ \/ / / / | / / _ \ ")
+        print(" / ___ / /_/ / /_/ /_/ /  / /  / / /_/ / /_/ /| |/ /  __/ ")
+        print("/_/  |_\__,_/\__/\____/  /_/  /_/\____/\__,_/ |___/\___/  ")
+        print(" ______________________________________________________")
+        print("/_____/_____/_____/_____/_____/_____/_____/_____/_____/  v"+meta.get_version())
+        print("    __  ___                         ______                          ")
+        print("   /  |/  /___  __  __________     / ____/_  ________________  _____")
+        print("  / /|_/ / __ \/ / / / ___/ _ \   / /   / / / / ___/ ___/ __ \/ ___/")
+        print(" / /  / / /_/ / /_/ (__  )  __/  / /___/ /_/ / /  (__  ) /_/ / /    ")
+        print("/_/  /_/\____/\__,_/____/\___/   \____/\__,_/_/  /____/\____/_/     ")
+        print(" __________________________________________________________________")
+        print("/_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/")
+        print("\n *Keep open during your game session \n\n")
 
 if __name__ == "__main__":   # It is being run directly
     watcher = Watcher()
+    watcher.print_wellcome()
     watcher.run()
