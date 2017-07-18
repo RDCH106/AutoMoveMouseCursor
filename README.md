@@ -24,4 +24,5 @@ Execute it with:
 
 And do not close it during your game session.
 
+## Windows Binaries
 ### [Download lastest release](https://github.com/RDCH106/AutoMoveMouseCursor/releases/latest)
