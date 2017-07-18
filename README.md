@@ -23,3 +23,5 @@ Execute it with:
 `$ python auto_move_mouse_cursor.py`
 
 And do not close it during your game session.
+
+### [Download lastest release](https://github.com/RDCH106/AutoMoveMouseCursor/releases/latest)
