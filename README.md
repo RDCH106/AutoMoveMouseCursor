@@ -28,3 +28,10 @@ And do not close it during your game session.
 
 ## Windows Binaries
 ### [Download latest release](https://github.com/RDCH106/AutoMoveMouseCursor/releases/latest)
+
+
+## Donate
+
+If this project is useful for you or helps you to reduce developing time, you can invite me to a cup of coffee ;-) Please, consider making a donation.
+
+[![donate](https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact@rdch106.hol.es&item_name=Donation&item_number=Software+Development&currency_code=EUR)
