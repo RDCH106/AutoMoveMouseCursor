@@ -1,5 +1,7 @@
 # AutoMoveMouseCursor
 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact@rdch106.hol.es&item_name=Donation&item_number=Software+Development&currency_code=EUR)
+
 AutoMoveMouseCursor (AMMC) is a small application that allows you to move the mouse cursor over a region to a zone that does not disturb, if it does not move during a period of time. 
 
 ## Brief
