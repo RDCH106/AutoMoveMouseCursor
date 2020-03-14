@@ -44,6 +44,10 @@ class Watcher:
 
     def switch_debug(self):
         self.__debug = not self.__debug
+        if self.__debug:
+            print("Debug Mode Activated!")
+        else:
+            print("Debug Mode Deactivated!")
 
     def run(self):
         while True:
