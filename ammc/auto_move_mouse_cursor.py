@@ -17,6 +17,8 @@ class Watcher:
         self.__dead_zone_point = (960, 540)
         self.__dead_zone_radius = 50  # In pixels
         self.__keyboard = keyboard.add_hotkey(hotkey="ctrl+m", callback=self.move_to_dead_zone)
+        self.__debug = False
+        self.__keyboard = keyboard.add_hotkey(hotkey="ctrl+d", callback=self.switch_debug)
 
     def in_area(self):
         pos = pyautogui.position()
@@ -25,10 +27,11 @@ class Watcher:
             (x - center_x)^2 + (y - center_y)^2 < radius^2
 
         '''
-        # print(""
-        #       + str((pos[0] - self.__dead_zone_point[0]) ** 2 + (pos[1] - self.__dead_zone_point[1]) ** 2)
-        #       + " < "
-        #       + str(self.__dead_zone_radius ** 2))
+        if self.__debug:
+            print("" +
+                  str((pos[0] - self.__dead_zone_point[0]) ** 2 + (pos[1] - self.__dead_zone_point[1]) ** 2) +
+                  " < " +
+                  str(self.__dead_zone_radius ** 2))
         if (pos[0] - self.__dead_zone_point[0]) ** 2 + (pos[1] - self.__dead_zone_point[1]) ** 2 \
                 < self.__dead_zone_radius ** 2:
             return True
@@ -38,6 +41,9 @@ class Watcher:
     def move_to_dead_zone(self):
         print("Move Mouse Event: (%s,%s)" % (str(self.__screen_size[0]/2), str(self.__screen_size[1])))
         pyautogui.moveTo(self.__screen_size[0]/2, self.__screen_size[1])
+
+    def switch_debug(self):
+        self.__debug = not self.__debug
 
     def run(self):
         while True:
