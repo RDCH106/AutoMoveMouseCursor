@@ -20,6 +20,7 @@ class Watcher:
         self.__keyboard = keyboard.add_hotkey(hotkey="ctrl+m", callback=self.move_to_dead_zone)
         self.__debug = False
         self.__keyboard = keyboard.add_hotkey(hotkey="ctrl+d", callback=self.switch_debug)
+        self.__keyboard = keyboard.add_hotkey(hotkey="ctrl+p", callback=self.move_to_dead_zone_point)
 
     def in_area(self):
         pos = pyautogui.position()
@@ -38,6 +39,10 @@ class Watcher:
             return True
         else:
             return False
+
+    def move_to_dead_zone_point(self):
+        print("Dead Zone Point (screen center): (%s,%s)" % (str(self.__screen_size[0] / 2), str(self.__screen_size[1]/2)))
+        pyautogui.moveTo(self.__screen_size[0] / 2, self.__screen_size[1]/2)
 
     def move_to_dead_zone(self):
         print("Move Mouse Event: (%s,%s)" % (str(self.__screen_size[0]/2), str(self.__screen_size[1])))
