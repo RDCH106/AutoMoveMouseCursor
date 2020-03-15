@@ -27,7 +27,7 @@ class Messages:
     @staticmethod
     def print_shorcuts():
         print("-------------------------------------------------------------")
-        print("Ctrl + m -> Move cursor to dead zone")
+        print("Ctrl + m -> Move cursor to dead zone (screen bottom center)")
         print("Ctrl + p -> Move cursor to dead zone point (screen center)")
         print("Ctrl + d -> Activate/Deactivate debug mode")
         print("-------------------------------------------------------------")
