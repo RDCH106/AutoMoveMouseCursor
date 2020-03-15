@@ -43,6 +43,12 @@ class Watcher:
         print("Move Mouse Event: (%s,%s)" % (str(self.__screen_size[0]/2), str(self.__screen_size[1])))
         pyautogui.moveTo(self.__screen_size[0]/2, self.__screen_size[1])
 
+    def check_screen_resolution(self):
+        current_screen_size = pyautogui.size()
+        if self.__screen_size[0] != current_screen_size[0] or self.__screen_size[1] != current_screen_size[1]:
+            self.__screen_size = current_screen_size
+            print("Update Screen Resolution: %sx%s" % (self.__screen_size[0], self.__screen_size[1]))
+
     def switch_debug(self):
         self.__debug = not self.__debug
         if self.__debug:
@@ -56,6 +62,7 @@ class Watcher:
                 if time.time() - self.__prev_timestamp > self.__timer:
                     self.move_to_dead_zone()
             else:
+                self.check_screen_resolution()
                 self.__prev_timestamp = time.time()
             time.sleep(1)
 
