@@ -62,8 +62,12 @@ class Watcher:
     def print_wellcome(self):
         self.__messages.print_wellcome()
 
+    def print_shorcuts(self):
+        self.__messages.print_shorcuts()
+
 
 if __name__ == "__main__":   # It is being run directly
     watcher = Watcher()
     watcher.print_wellcome()
+    watcher.print_shorcuts()
     watcher.run()

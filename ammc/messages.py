@@ -23,3 +23,11 @@ class Messages:
         print(" __________________________________________________________________")
         print("/_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/")
         print("\n *Keep open during your game session \n\n")
+
+    @staticmethod
+    def print_shorcuts():
+        print("-------------------------------------------------------------")
+        print("Ctrl + m -> Move cursor to dead zone")
+        print("Ctrl + d -> Activate/Deactivate debug mode")
+        print("-------------------------------------------------------------")
+        print("\n\n")
